@@ -73,9 +73,12 @@ public class Ejercicio1 {
         do{
             resultado = resultado/2;
             c = c+1;
-        }while(resultado/2 > 1);
+        }while(resultado > 1);
         longitud = c;
         int[] num_bin = new int [longitud];
+
+        System.out.println("Longitud: " + longitud);
+        System.out.println("Resultado1: " + resultado);
 
         while (resultado/2 > 1) {
             for (int p = 0; p < num_bin.length; p++) {
@@ -103,6 +106,8 @@ public class Ejercicio1 {
         } else {
             System.out.println("El numero " + n + " no es odioso");
         }
+
+        System.out.println("Resultado: " + resultado);
     }
     public static void main(String[] args){
         int opcion = opcion();
