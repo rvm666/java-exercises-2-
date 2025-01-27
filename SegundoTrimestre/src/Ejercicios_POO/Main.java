@@ -11,5 +11,6 @@ public class Main {
         copito.setCuidador("Javi");
         System.out.println(mono3);
         System.out.println();
+        EntradaSalida.dameMono();
     }
 }

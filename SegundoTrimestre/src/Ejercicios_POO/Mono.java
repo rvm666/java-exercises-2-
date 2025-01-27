@@ -21,8 +21,10 @@ public class Mono {
         this.cuidador = cuidador;
     }
     public Mono(){
-
+        nombre = "";
     }
+
+    //METODOS
     public String getNombre() {
         return nombre;
     }
