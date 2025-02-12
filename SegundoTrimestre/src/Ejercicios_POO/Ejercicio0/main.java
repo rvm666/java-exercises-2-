@@ -20,11 +20,14 @@ public class main {
                     Array miarray = new Array(num_i);
                     miarray.getMostrarContenido();
                 } break;
+                case 3:{
+
+                }break;
                 default:{
                     System.out.println("Introduce una opcion valida");
                 }
             }
-        }while(opc != 3);
+        }while(opc != 5);
 
     }
 }
