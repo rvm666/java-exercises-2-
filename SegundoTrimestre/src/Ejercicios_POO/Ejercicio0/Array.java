@@ -32,11 +32,11 @@ public class Array {
     }
     public void OpcionesArray(int[] miarray) {
         for (int i = 0;  i< v1.length; i++) {
-            for (int p = 0; p < p.length-i-1; i++) {
-                if(v1[p] < a[p+1]){
-                    int tmp = a[p+1];
-                    a[p+1] = a[p];
-                    a[p] = tmp;
+            for (int p = 0; p < v1.length-i-1; i++) {
+                if(v1[p] < v1[p+1]){
+                    int tmp = v1[p+1];
+                    v1[p+1] = v1[p];
+                    v1[p] = tmp;
                 }
             }
         }
