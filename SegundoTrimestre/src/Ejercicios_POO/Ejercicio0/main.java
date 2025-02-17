@@ -17,17 +17,16 @@ public class main {
                 case 2:{
                     System.out.println("Introduce numero hasta completar la lista: ");
                     int num_i = sc.nextInt();
-                    Array miarray = new Array(num_i);
-                    miarray.getMostrarContenido();
+                    Array miarray_manual = new Array(num_i);
+                    miarray_manual.getMostrarContenido();
                 } break;
-                case 3:{
-
-                }break;
                 default:{
                     System.out.println("Introduce una opcion valida");
                 }
             }
-        }while(opc != 5);
+        }while(opc != 3);
+
+
 
     }
 }

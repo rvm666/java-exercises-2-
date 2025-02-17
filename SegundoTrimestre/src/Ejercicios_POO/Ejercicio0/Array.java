@@ -30,6 +30,7 @@ public class Array {
             System.out.println(v1[p]);
         }
     }
+
     public void OpcionesArray(int[] miarray) {
         for (int i = 0;  i< v1.length; i++) {
             for (int p = 0; p < v1.length-i-1; i++) {
