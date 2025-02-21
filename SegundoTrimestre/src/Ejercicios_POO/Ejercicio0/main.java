@@ -4,29 +4,32 @@ import java.util.Scanner;
 public class main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
+        System.out.println("Introduce numero hasta completar el array: ");
+        int num_i = sc.nextInt();
+        OperacionesArray miarray_manual = new OperacionesArray(num_i);
         int opc;
         do{
-            System.out.println("Elije una opcion para rellenar la lista: \n" + "1.- AutoRelleno \n" + "2.- Relleno manual \n" + "3.- Salir");
+            System.out.println("Se a generado un array aleatorio, que deseas hacer con el: \n" + "1. Listar contenido \n" + "2. Ordenar array \n" + "3. Calcular media \n" + "4. Copia del array invertido \n" + "5. Salir");
             opc = sc.nextInt();
-            switch (opc){
+            switch(opc){
                 case 1:{
-                    Array miarray = new Array();
-                    miarray.getMostrarContenido();
-                } break;
-                case 2:{
-                    System.out.println("Introduce numero hasta completar la lista: ");
-                    int num_i = sc.nextInt();
-                    Array miarray_manual = new Array(num_i);
                     miarray_manual.getMostrarContenido();
                 } break;
+                case 2:{
+                    miarray_manual.getOrdenarcontenido();
+                    miarray_manual.getMostrarContenido();
+                } break;
+                case 3:{
+                    miarray_manual.getMediaarray();
+                } break;
+                case 4:{
+                    miarray_manual.getMostrarContenido();
+                    miarray_manual.getInvertirarray();
+                } break;
                 default:{
-                    System.out.println("Introduce una opcion valida");
+                    System.out.println("Opcion no valida");
                 }
             }
-        }while(opc != 3);
-
-
-
+        }while (opc != 5);
     }
 }
