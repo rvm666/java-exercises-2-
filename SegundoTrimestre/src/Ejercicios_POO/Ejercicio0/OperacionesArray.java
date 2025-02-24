@@ -16,7 +16,7 @@ public class OperacionesArray {
     }
     public OperacionesArray(int num){
         Scanner sc = new Scanner(System.in);
-        v1 = new int[20];
+        this.v1 = new int[20];
         for (int p = 0; p < v1.length; p++){
             System.out.println("Introduce numeros hasta completar la lista: ");
             num = sc.nextInt();
@@ -31,14 +31,18 @@ public class OperacionesArray {
     }
 
     public void getOrdenarcontenido() {
-        for (int i = 1;  i< v1.length; i++) {
-            int menor = v1[i - 1];
-            if (v1[i] < menor) {
-                menor = v1[i];
-            } else if (v1[i] > menor) {
-                menor = v1[i];
+        int aux;
+        for(int p = 0; p < v1.length-1; p++){
+            for (int i = p+1;  i< v1.length; i++) {
+                int menor = v1[p];
+                if (v1[i] < menor) {
+                    aux = v1[i];
+                    v1[i] = menor;
+                    v1[p] = aux;
+                }
             }
         }
+
         for (int p = 0; p < v1.length; p++) {
             System.out.println(v1[p]);
         }
