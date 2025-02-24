@@ -12,18 +12,21 @@ public class main2 {
             opc = sc.nextInt();
             switch(opc){
                 case 1:{
-                    miarray.getMostrarContenido();
+                    miarray.MostrarContenido();
                 } break;
                 case 2:{
-                    miarray.getOrdenarcontenido();
+                    miarray.Ordenarcontenido();
+                    miarray.MostrarContenido();
                 } break;
                 case 3:{
-                    miarray.getMediaarray();
+                    System.out.println("La media del array es:");
+                    miarray.Mediaarray();
                 } break;
                 case 4:{
-                    miarray.getMostrarContenido();
+                    miarray.MostrarContenido();
                     System.out.println("Array invertido: ");
-                    miarray.getInvertirarray();
+                    miarray.Invertirarray();
+                    miarray.MostrarContenido();
                 } break;
                 default:{
                     System.out.println("Opcion no valida");

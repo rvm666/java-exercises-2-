@@ -42,8 +42,6 @@ public class OperacionesTriangulo {
     }
 
     public void area(){
-        int area = Math.sqrt([4*Math.pow(lado1,2)*Math.pow(lado2,2) - Math.pow(Math.pow(lado1,2) + Math.pow(lado2,2) - Math.pow(lado3,2), 2)])/4;
-
-        int area2 = 1/4 * Math.sqrt(4*Math.pow(lado1,2)*Math.pow(lado2,2) - Math.pow(Math.pow(lado1,2) + Math.pow(lado2,2) - Math.pow(lado3,2), 2)])/4;
+        double area = Math.sqrt((4*Math.pow(lado1,2)*Math.pow(lado2,2) - Math.pow(Math.pow(lado1,2) + Math.pow(lado2,2) - Math.pow(lado3,2), 2)))/4;
     }
 }

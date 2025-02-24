@@ -24,13 +24,13 @@ public class OperacionesArray {
         }
     }
 
-    public void getMostrarContenido() {
+    public void MostrarContenido() {
         for(int p = 0; p < v1.length; p++){
             System.out.println(v1[p]);
         }
     }
 
-    public void getOrdenarcontenido() {
+    public void Ordenarcontenido() {
         int aux;
         for(int p = 0; p < v1.length-1; p++){
             for (int i = p+1;  i< v1.length; i++) {
@@ -48,26 +48,23 @@ public class OperacionesArray {
         }
     }
 
-    public void getMediaarray() {
+    public double Mediaarray() {
         int aux = 0;
         for (int p = 0; p < v1.length; p++) {
             aux = aux + v1[p];
         }
-        int media = aux/v1.length;
-        System.out.println("La media del array es: " + media);
+        double media = aux/v1.length;
+        return media;
     }
 
     int[] v1cp;
-    public void getInvertirarray() {
+    public void Invertirarray() {
         v1cp = v1;
         for (int p = 0; p < v1cp.length/2; p++) {
             int j = v1cp.length-p-1;
             int a = v1cp[p];
             v1cp[p] = v1cp[j];
             v1cp[j] = a;
-        }
-        for (int p = 0; p < v1cp.length; p++) {
-            System.out.println(v1cp[p]);
         }
     }
 }
