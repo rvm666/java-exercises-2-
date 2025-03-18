@@ -36,7 +36,7 @@ public class Triangulo {
         return punto3;
     }
 
-    public double calcularDistanciaDesde(){
+  /*  public double calcularDistanciaDesde(){
 
     }
 
@@ -59,5 +59,5 @@ public class Triangulo {
     public void area(){
         double area = Math.sqrt((4*Math.pow(punto1,2)*Math.pow(punto2,2) - Math.pow(Math.pow(punto1,2) + Math.pow(punto2,2) - Math.pow(punto3,2), 2)))/4;
         System.out.println("El area del triangulo es: " + area);
-    }
+    } */
 }

@@ -9,8 +9,7 @@ public class main {
         System.out.println("Lado 1 : " + tri.getPunto1());
         System.out.println("Lado 2 : " + tri.getPunto2());
         System.out.println("Lado 3 : " + tri.getPunto3());
-        tri.perimetro();
-        tri.area();
+
 
 
         Scanner sc = new Scanner(System.in);

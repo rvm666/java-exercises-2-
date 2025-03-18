@@ -8,4 +8,19 @@ public class GestorContactos {
         contacto.setTelefono(telefono);
 
     }
+
+    public static void cambiarCorreo(Contacto contacto,String correo) {
+        contacto.getTitular().setCorreo(correo);
+    }
+
+    public static String compararContacto(Contacto contacto1, Contacto contacto2) {
+        String resultado = "";
+        boolean a = true;
+        if (contacto1.equals(contacto2) == a) {
+            resultado = "Son iguales";
+        } else {
+            resultado = "No son iguales";
+        }
+        return resultado;
+    }
 }
