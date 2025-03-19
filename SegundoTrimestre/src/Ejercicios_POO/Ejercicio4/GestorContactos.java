@@ -13,10 +13,11 @@ public class GestorContactos {
         contacto.getTitular().setCorreo(correo);
     }
 
+
+
     public static String compararContacto(Contacto contacto1, Contacto contacto2) {
-        String resultado = "";
-        boolean a = true;
-        if (contacto1.equals(contacto2) == a) {
+        String resultado = " ";
+        if (contacto1.equals(contacto2)) {
             resultado = "Son iguales";
         } else {
             resultado = "No son iguales";
