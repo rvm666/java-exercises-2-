@@ -33,19 +33,19 @@ public class CuentaCorriente {
 
 
     //METODOS
-    public double ingresar(double incremento){
+    public void ingresar(double incremento){
         double total;
-        total = saldo + incremento;
-        return total;
+        total = this.saldo + incremento;
+        this.saldo = total;
     }
 
-    public double reintegro(double decremento){
+    public void reintegro(double decremento){
         double total;
-        total = saldo - decremento;
-        return total;
+        total = this.saldo - decremento;
+        this.saldo = total;
     }
 
-    public String compararCuenta(CuentaCorriente cuenta1, CuentaCorriente cuenta2){
+    public static String compararCuenta(CuentaCorriente cuenta1, CuentaCorriente cuenta2){
         String loson = "";
         int soniguales;
         soniguales = cuenta1.getNumCuenta().compareTo(cuenta2.getNumCuenta());
@@ -57,6 +57,14 @@ public class CuentaCorriente {
         return loson;
     }
 
+    public String devolverInfoCuenta(){
+        StringBuilder sb = new StringBuilder("Numero cuenta");
+        sb.append(numCuenta);
+        sb.append(" con saldo:");
+        sb.append(saldo);
+        return sb.toString();
+    }
+
     @Override
     public String toString() {
         return "CuentaCorriente{" +
@@ -65,15 +73,11 @@ public class CuentaCorriente {
                 ", saldo=" + saldo +
                 '}';
     }
-    public void imprimirCuenta(){
-        System.out.println("Numero Cuenta:" + numCuenta+ " con saldo"+ saldo);
-    }
-    public String devolverInfoCuenta(){
-        StringBuilder sb = new StringBuilder("Numero cuenta");
-        sb.append(numCuenta);
-        sb.append(" con saldo:");
-        sb.append(saldo);
-        return sb.toString();
 
-    }
+
+    //otra manera de hacer "devolverInfoCuenta"
+    /*public void imprimirCuenta(){
+        System.out.println("Numero Cuenta:" + numCuenta+ " con saldo"+ saldo);
+    }*/
+
 }
