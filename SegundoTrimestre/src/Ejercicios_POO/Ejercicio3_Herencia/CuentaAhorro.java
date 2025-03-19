@@ -25,7 +25,7 @@ public class CuentaAhorro extends CuentaCorriente{
 
     //METODOS
     public double calcularInteres(CuentaAhorro cuentaAhorro) {
-        double interes = cuentaAhorro.getSaldo() * this.interes;
+        double interes = cuentaAhorro.getSaldo() * (this.interes/100);
         cuentaAhorro.setSaldo(cuentaAhorro.getSaldo() + interes);
         return interes;
     }
