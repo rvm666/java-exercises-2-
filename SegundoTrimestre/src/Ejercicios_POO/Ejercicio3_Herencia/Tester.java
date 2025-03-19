@@ -26,7 +26,7 @@ public class Tester {
         String comparar = CuentaCorriente.compararCuenta(cuenta1, cuenta2);
         System.out.println(comparar);
 
-        cuenta2.devolverInfoCuenta();
-        double interes = CuentaAhorro.calcularInteres(cuenta3A);
+        //cuenta2.devolverInfoCuenta();
+        //double interes = CuentaAhorro.calcularInteres(cuenta3A);
     }
 }
