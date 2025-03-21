@@ -28,7 +28,7 @@ public class Tester {
 
         cuenta2.devolverInfoCuenta();
         System.out.println(cuenta3A.toString());
-        double interes = cuenta3A.calcularInteres(cuenta3A);
+        double interes = cuenta3A.calcularInteres();
         System.out.println(cuenta3A.toString());
         System.out.println("El interes es: " + interes);
     }
