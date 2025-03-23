@@ -1,7 +1,7 @@
 package Ejercicios_POO.zoo;
 
 public class Jirafa extends Animal{
-    private double longitudCuello;
+    public double longitudCuello;
 
     public Jirafa(String nombre, double peso, int edad, String sonido, double longitudCuello) {
         super(nombre, peso, edad, sonido);
