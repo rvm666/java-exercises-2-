@@ -1,41 +1,103 @@
 package Ejercicios_POO.zoo;
 
+import java.util.Scanner;
+
 public class Animales {
     private Animal[] lista;//polimorfismo: sus elementos son Animales pero pueden tomar diferentes formas, tantas como hijos tengas
 
-    public Animales(int tamaño, Animal animal){
+
+    //CONSTRUCTORES
+    public Animales(int tamaño){
         lista = new Animal[tamaño];
-        for (int i = 0; i < lista.length; i++) {
-            this.lista[i] = animal;
+        for (int i = 1; i < lista.length/2; i++) {
+            lista[i] = new Jirafa();
+        }
+
+        for (int i = lista.length/2; i < lista.length; i++) {
+            lista[i] = new Pinguino();
         }
     }
 
     public Animales() {
-        this.lista = new Animal[10];
+        this(10);
     }
 
+
+    //INSERTAR / ELIMINAR
     public void insertarAnimal(Animal a){
-        for (int i = 0; i < lista.length; i++) {
+        boolean introducido = false;
+        //introducido==false es lo mismo que !introducido
+        for (int i = 0; i < lista.length && introducido==false; i++) {
             if (lista[i] == null) {
                 lista[i] = a;
-            } else {
-                System.out.println("La lista esta completa");
+                introducido = true;
             }
         }
     }
 
 
-    public void eliminarAnimal(Animal a){
+
+    //Recuerda poner lista[i] != null en todos los recorridos
+    //metodo listarAnimales
+    public void listarAnimales(){
+
+        for (int i = 0; i < lista.length; i++){
+          if (lista[i]!=null)
+              System.out.println(lista[i]);;
+        }
+
+    }
+
+
+
+    public Animal dameAnimal(){
+        Scanner lector = new Scanner(System.in);
+        System.out.println("Que animal quieres? \n" + "1.Jirafa \n" + "2.Mono");
+        int eleccion = lector.nextInt();
+        Animal animal = null;
+
+        switch(eleccion){
+            case 1:{
+                System.out.println("Introduce nombre, peso, edad y la longitud del cuello");
+                String nombre = lector.nextLine();
+                double peso = lector.nextDouble();
+                int edad = lector.nextInt();
+                double longitudCuello = lector.nextDouble();
+                animal = new Jirafa(nombre,peso,edad, longitudCuello);
+            } break;
+            case 2:{
+                System.out.println("Introduce nombre, peso, edad y altura");
+                String nombre = lector.nextLine();
+                double peso = lector.nextDouble();
+                int edad = lector.nextInt();
+                double altura = lector.nextDouble();
+                animal = new Pinguino(nombre,peso,edad,altura);
+            }break;
+            default:{
+                System.out.println("Opcion no valida");
+            }
+        }
+        return animal;
+
+
+
+
+    }
+
+
+    public void eliminarAnimal(String nombre){
         for (int i = 0; i < lista.length; i++) {
-            if (lista[i] == a){
+            if (lista[i] != null && lista[i].getNombre().equals(nombre)){
                 lista[i] = null;
             }
         }
     }
 
-    public void cambiarPeso(Animal a, double peso){
+
+    //MODIFICAR DATOS
+    public void cambiarPeso(String nombre, double peso){
         for (int i = 0; i < lista.length; i++) {
-            if (lista[i] == a){
+            if (lista[i].getNombre().equals(nombre) && lista[i] != null){
                 lista[i].setPeso(peso);
             } else {
                 System.out.println("Animal no encontrado");
@@ -43,9 +105,9 @@ public class Animales {
         }
     }
 
-    public void cambiarEdad(Animal a, int edad){
+    public void cambiarEdad(String nombre, int edad){
         for (int i = 0; i < lista.length; i++){
-            if (lista[i] == a){
+            if (lista[i].getNombre().equals(nombre) && lista[i] != null){
                 lista[i].setEdad(edad);
             } else {
                 System.out.println("Animal no encontrado");
@@ -53,10 +115,14 @@ public class Animales {
         }
     }
 
-    public void cambiarLongitudCuello(Jirafa a, double longitud){
+    public void cambiarLongitudCuello(String nombre, double longitud){
         for (int i = 0; i < lista.length; i++){
-            if (lista[i] == a){
-
+            if (lista[i].getNombre().equals(nombre) && lista[i] != null){
+                if (lista[i] instanceof Jirafa)
+                    ((Jirafa) lista[i]).setLongitudCuello(longitud);
+                } else {
+                    System.out.println("No se ha podido cambiar la longitud porque no es una jirafa");
+                }
             }
         }
     }
@@ -67,4 +133,4 @@ public class Animales {
     //cambiar un atributo general
     //cambiar algo propio de un hijo
 
-}
+

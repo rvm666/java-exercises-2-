@@ -3,8 +3,8 @@ package Ejercicios_POO.zoo;
 public class Jirafa extends Animal{
     public double longitudCuello;
 
-    public Jirafa(String nombre, double peso, int edad, String sonido, double longitudCuello) {
-        super(nombre, peso, edad, sonido);
+    public Jirafa(String nombre, double peso, int edad, double longitudCuello) {
+        super(nombre, peso, edad);
         this.longitudCuello = longitudCuello;
     }
 
@@ -19,6 +19,7 @@ public class Jirafa extends Animal{
 
     @Override
     public String hazSonido() {
-        return "";
+        return "IIIIIIIIIIII";
     }
+
 }

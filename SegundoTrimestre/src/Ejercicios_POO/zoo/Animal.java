@@ -4,20 +4,17 @@ public abstract class Animal {
     private String nombre;
     private double peso;
     private int edad;
-    private String sonido;
 
-    public Animal(String nombre, double peso, int edad, String sonido){
+    public Animal(String nombre, double peso, int edad){
         this.nombre = nombre;
         this.peso = peso;
         this.edad = edad;
-        this.sonido = sonido;
     }
 
     public Animal(){
         this.nombre = "";
         this.peso = 0;
         this.edad = 0;
-        this.sonido = "";
     }
 
     public String getNombre() {return nombre;}
@@ -32,9 +29,15 @@ public abstract class Animal {
 
     public void setEdad(int edad) {this.edad = edad;}
 
-    public String getSonido() {return sonido;}
 
-    public void setSonido(String sonido) {this.sonido = sonido;}
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "nombre='" + nombre + '\'' +
+                ", peso=" + peso +
+                ", edad=" + edad +
+                '}';
+    }
 
     //nombre,peso, edad
     //dos hijos con algún atributo propio
