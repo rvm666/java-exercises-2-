@@ -1,5 +1,9 @@
 package Ejercicios_POO.zoo;
 
+import java.util.Random;
+
+import static java.lang.String.valueOf;
+
 public class Pinguino extends Animal{
     private double altura;
 
@@ -11,7 +15,8 @@ public class Pinguino extends Animal{
 
     public Pinguino() {
         super();
-        this.altura = 0.0;
+        Random rdn = new Random();
+        this.altura = rdn.nextDouble(200);
     }
 
     public double getAltura() {return altura;}
@@ -25,8 +30,9 @@ public class Pinguino extends Animal{
 
     @Override
     public String toString() {
-        return "pingüino{" +
-                "altura=" + altura +
-                '}';
+        StringBuilder sb = new StringBuilder(super.toString());
+        sb.append(" altura=" + altura +
+                '}');
+        return valueOf(sb);
     }
 }
