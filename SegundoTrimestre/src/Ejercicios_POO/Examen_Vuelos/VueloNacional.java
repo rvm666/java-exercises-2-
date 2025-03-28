@@ -8,9 +8,6 @@ public class VueloNacional extends Vuelo {
 
 
 
-
-
-
     public double calcularPrecioReal(Vuelo vuelo){
         if(vuelo.getFecha().getMes() == 7){
             vuelo.setPrecio(vuelo.getPrecio() * 0.20 + vuelo.getPrecio());
