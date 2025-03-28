@@ -150,11 +150,7 @@ public class Animales {
         String sonido = "";
         for (int i = 0; i < lista.length; i++){
             if(lista[i] != null && lista[i].getNombre().equals(nombre)){
-                if(lista[i] instanceof Pinguino){
-                    sonido = ((Pinguino)lista[i]).hazSonido();
-                } else {
-                    sonido = ((Jirafa)lista[i]).hazSonido();
-                }
+               lista[i].hazSonido();
             }
         }
         return sonido;
