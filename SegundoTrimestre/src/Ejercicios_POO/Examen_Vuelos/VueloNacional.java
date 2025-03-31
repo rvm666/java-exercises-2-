@@ -6,6 +6,9 @@ public class VueloNacional extends Vuelo {
         super(identificador, aerolinea, responsable_vuelo, origen, destino, fecha, pasajeros, precio);
     }
 
+    public VueloNacional(){
+
+    }
 
 
     public double calcularPrecioReal(Vuelo vuelo){
@@ -16,4 +19,5 @@ public class VueloNacional extends Vuelo {
         }
         return vuelo.getPrecio();
     }
+
 }

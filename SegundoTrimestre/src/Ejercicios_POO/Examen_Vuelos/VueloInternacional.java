@@ -1,5 +1,9 @@
 package Ejercicios_POO.Examen_Vuelos;
 
+import java.util.Random;
+
+import static java.lang.String.valueOf;
+
 public class VueloInternacional extends Vuelo{
         private int escala;
         private String[] nombre_Escala;
@@ -7,6 +11,11 @@ public class VueloInternacional extends Vuelo{
     public VueloInternacional(int identificador, String aerolinea, String responsable_vuelo,String origen,String destino,Fecha fecha,int pasajeros,double precio,int escala) {
         super(identificador, aerolinea, responsable_vuelo, origen, destino, fecha, pasajeros, precio);
         this.escala = escala;
+    }
+
+    public VueloInternacional(){
+        Random rdn = new Random();
+        this.escala = rdn.nextInt(1, 4);
     }
 
     public int getEscala() {return escala;}
@@ -24,5 +33,14 @@ public class VueloInternacional extends Vuelo{
             vuelo.setPrecio(vuelo.getPrecio() - vuelo.getPrecio() * (escala * 0.2));
         }
         return vuelo.getPrecio();
+    }
+
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder(super.toString());
+        sb.append("VueloInternacional=" +
+                "escala=" + escala + '}');
+        return valueOf(sb);
     }
 }
