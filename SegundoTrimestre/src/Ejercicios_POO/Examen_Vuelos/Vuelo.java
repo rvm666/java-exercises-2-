@@ -46,7 +46,7 @@ public abstract class Vuelo extends Datos {
                 b = false;
             }
         }while (b = true);
-
+       System.out.println(Nombres.AEROLINEAS[0]);
         this.identificador = num;
         this.aerolinea = areolineaN[rdn.nextInt(areolineaN.length)];
         this.responsable_vuelo = responsable_vueloN[rdn.nextInt(responsable_vueloN.length)];
@@ -55,7 +55,6 @@ public abstract class Vuelo extends Datos {
         this.fecha = new Fecha();
         this.pasajeros = rdn.nextInt(150, 500);
         this.precio = rdn.nextDouble(50, 350);
-
     }
 
     public int getIdentificador() {return identificador;}

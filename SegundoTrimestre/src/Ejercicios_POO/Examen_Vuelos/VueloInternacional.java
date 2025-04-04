@@ -6,16 +6,19 @@ import static java.lang.String.valueOf;
 
 public class VueloInternacional extends Vuelo{
         private int escala;
-        private String[] nombre_Escala;
+        private StringBuilder nombre_Escala; //; separo, con un split por ; el length del array que devuelve es el número
 
-    public VueloInternacional(int identificador, String aerolinea, String responsable_vuelo,String origen,String destino,Fecha fecha,int pasajeros,double precio,int escala) {
+    public VueloInternacional(int identificador, String aerolinea, String responsable_vuelo,String origen,String destino,Fecha fecha,int pasajeros,double precio,StringBuilder escalas) {
         super(identificador, aerolinea, responsable_vuelo, origen, destino, fecha, pasajeros, precio);
-        this.escala = escala;
+        this.nombre_Escala = escalas;
     }
 
     public VueloInternacional(){
+        super();
+        nombre_Escala = new StringBuilder();
         Random rdn = new Random();
         this.escala = rdn.nextInt(1, 4);
+        for ()
     }
 
     public int getEscala() {return escala;}
