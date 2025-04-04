@@ -30,7 +30,7 @@ public class GestionVuelos {
         for(int i = 0; i < lista.length && lista[i] != null; i++){
             if(lista[i].getIdentificador() == identificador){
                 lista[i] = null;
-            } else{
+            } else {
                 System.out.println("No se a encontrado el vuelo: " + identificador);
             }
         }
@@ -96,7 +96,7 @@ public class GestionVuelos {
                         double precio = sc.nextDouble();
                         System.out.println("Introduzca Nº de escalas que hara");
                         int escala = sc.nextInt();
-                        vuelo = new VueloInternacional(identificador, aerolinea, responsable, origen, destino, fecha, pasajeros, precio, escala);
+                        vuelo = new VueloInternacional(identificador, aerolinea, responsable, origen, destino, fecha, pasajeros, precio, );
                     }break;
                     default:{
                         System.out.println("Opción no valida");
@@ -141,7 +141,15 @@ public class GestionVuelos {
         System.out.println("Introduce el nuevo precio base: ");
         double precio = sc.nextDouble();
         for (int i = 0; i < lista.length; i++){
-            if()
+            if(lista[i].getIdentificador() == id){
+                lista[i].setPrecio(precio);
+            } else{
+                System.out.println("Su vuelo no ha sido encontrado");
+            }
         }
+    }
+
+    public void actualizarVueloEscala(){
+        System.out.println();
     }
 }
