@@ -94,9 +94,9 @@ public class GestionVuelos {
                         int pasajeros = sc.nextInt();
                         System.out.println("Introduzca el precio: ");
                         double precio = sc.nextDouble();
-                        System.out.println("Introduzca Nº de escalas que hara");
-                        int escala = sc.nextInt();
-                        vuelo = new VueloInternacional(identificador, aerolinea, responsable, origen, destino, fecha, pasajeros, precio, );
+                        System.out.println("Introduzca las escalas que hara separadas por ';': ");
+                        StringBuilder escala = new StringBuilder(sc.next());
+                        vuelo = new VueloInternacional(identificador, aerolinea, responsable, origen, destino, fecha, pasajeros, precio, escala);
                     }break;
                     default:{
                         System.out.println("Opción no valida");
@@ -127,12 +127,37 @@ public class GestionVuelos {
     }
 
     public void mostrarListadoFiltro(String origen, String destino, double precioMI, double precioMA){
-        for (int i = 0; i < lista.length; i++){
-            if(lista[i].getOrigen() == origen && lista[i].getDestino() == destino && lista[i].getPrecio() > precioMI && lista[i].getPrecio() < precioMA){
-                lista[i].toString();
+        for (int i = 0; i < lista.length && lista[i] != null; i++){
+            if(lista[i].getOrigen().equals(origen) && lista[i].getDestino().equals(destino) && lista[i].getPrecio() > precioMI && lista[i].getPrecio() < precioMA){
+                System.out.println(lista[i].toString()); //sólo funciona en consola
             }
         }
     }
+
+    /* Mejor para el futuro, java fx(visual)
+    public String [] devolverListadoFiltro(String origen, String destino, double precioMI, double precioMA){
+        String vuelta[] = new String[lista.length];
+        for (int i = 0; i < lista.length && lista[i] != null; i++){
+            if(lista[i].getOrigen().equals(origen) && lista[i].getDestino() == destino && lista[i].getPrecio() > precioMI && lista[i].getPrecio() < precioMA){
+                vuelta[i]=lista[i].toString();
+            }
+        }
+        int contador=0;
+        for (int i = 0; i < lista.length && lista[i] != null; i++){
+            if(lista[i].getOrigen().equals(origen) && lista[i].getDestino() == destino && lista[i].getPrecio() > precioMI && lista[i].getPrecio() < precioMA){
+                contador++;
+            }
+        }
+        String vuelta[] = new String[contador];
+        for (int i = 0, j=0; i < lista.length && lista[i] != null; i++){
+            if(lista[i].getOrigen().equals(origen) && lista[i].getDestino() == destino && lista[i].getPrecio() > precioMI && lista[i].getPrecio() < precioMA){
+                vuelta[j] = lista[i].toString();
+                j++;
+            }
+        }
+
+        return vuelta;
+    }*/
 
     public void cambiarPrecioBase(){
         Scanner sc = new Scanner(System.in);
@@ -140,7 +165,7 @@ public class GestionVuelos {
         int id = sc.nextInt();
         System.out.println("Introduce el nuevo precio base: ");
         double precio = sc.nextDouble();
-        for (int i = 0; i < lista.length; i++){
+        for (int i = 0; i < lista.length && lista[i] != null; i++){
             if(lista[i].getIdentificador() == id){
                 lista[i].setPrecio(precio);
             } else{
@@ -149,7 +174,36 @@ public class GestionVuelos {
         }
     }
 
-    public void actualizarVueloEscala(){
-        System.out.println();
+    public void actualizarVueloEscala(int id) {
+        scanner
+                //num escalas y paises
+        for (int i = 0; i < lista.length; i++){
+            if (lista[i]!=null && lista[i] instanceof VueloInternacional && lista[i].getIdentificador() == id)
+                //for de
+
+                ((VueloInternacional)lista[i]).getNombre_Escala().;
+        }
     }
+
+    public void eliminarVuelo(String origen, String destino){
+        Scanner sc = new Scanner(System.in);
+        int opc = 0;
+        for (int i = 0; i < lista.length && lista[i] != null; i++){
+            if(lista[i].getOrigen().equals(origen) && lista[i].getDestino().equals(destino)){
+                System.out.println("Desea borrar el vuelo " + lista[i].toString());
+                System.out.println("1.Si \n" + "2.No");
+                opc = sc.nextInt();
+            }
+            if(opc == 1){
+                lista[i] = null;
+                System.out.println("Se ha eliminado el vuelo " + lista[i].toString());
+            } else {
+                System.out.println("No se ha eliminado ningun vuelo");
+            }
+        }
+    }
+
+    public void ordernarVuelos(){}
+
+
 }

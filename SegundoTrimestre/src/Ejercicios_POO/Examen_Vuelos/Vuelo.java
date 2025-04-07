@@ -12,9 +12,6 @@ public abstract class Vuelo extends Datos {
     private Fecha fecha;
     private int pasajeros;
     private double precio;
-    String[] areolineaN = {"Aeromexico","Saudia","Delta","Avianca", "SAS", "Iberia", "EasyJet","Qatar","Emirates","Volaris"};
-    String[] responsable_vueloN = {"Juan","Alberto","Marcos", "Angel", "Celia", "Lucia","Paula", "Maria", "Soraya", "Victor"};
-    String[] lugaresN = {"Madrid", "Barcelona", "Malaga", "Paris", "Londres", "Berlin", "Los Angeles", "Nueva York", "Moscú", "Tokyo", "Singapur", "Qatar", "Ciudad de Mexico", "Buenos Aires", "Lima", "HongKong", "Seul", "Roma", "Oslo"};
     public abstract double calcularPrecioReal(Vuelo vuelo);
 
     public Vuelo(int identificador, String aerolinea, String responsable_vuelo,String origen,String destino,Fecha fecha,int pasajeros,double precio){
@@ -32,7 +29,7 @@ public abstract class Vuelo extends Datos {
         Random rdn = new Random();
         boolean a = true;
         int num = 0;
-        for (int i = 0; a == true; i++ ) {
+        for (int i = 0; a; i++ ) {
             num = i;
        }
 
@@ -40,18 +37,17 @@ public abstract class Vuelo extends Datos {
         int num2 = 0;
         boolean b = true;
         do{
-            num1 = rdn.nextInt(lugaresN.length);
-            num2 = rdn.nextInt(lugaresN.length);
+            num1 = rdn.nextInt(Nombres.LUGARES.length);
+            num2 = rdn.nextInt(Nombres.LUGARES.length);
             if(num1 != num2){
                 b = false;
             }
-        }while (b = true);
-       System.out.println(Nombres.AEROLINEAS[0]);
+        }while (b == true);
         this.identificador = num;
-        this.aerolinea = areolineaN[rdn.nextInt(areolineaN.length)];
-        this.responsable_vuelo = responsable_vueloN[rdn.nextInt(responsable_vueloN.length)];
-        this.origen = lugaresN[num1];
-        this.destino = lugaresN[num2];
+        this.aerolinea = Nombres.AEROLINEAS[rdn.nextInt(Nombres.AEROLINEAS.length)];
+        this.responsable_vuelo = Nombres.RESPONSABLE_VUELO[rdn.nextInt(Nombres.RESPONSABLE_VUELO.length)];
+        this.origen = Nombres.LUGARES[num1];
+        this.destino = Nombres.LUGARES[num2];
         this.fecha = new Fecha();
         this.pasajeros = rdn.nextInt(150, 500);
         this.precio = rdn.nextDouble(50, 350);
