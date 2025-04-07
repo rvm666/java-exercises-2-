@@ -179,8 +179,8 @@ public class GestionVuelos {
                 //num escalas y paises
         for (int i = 0; i < lista.length; i++){
             if (lista[i]!=null && lista[i] instanceof VueloInternacional && lista[i].getIdentificador() == id) {
-                //fo
-
+                System.out.println("Introduce la escala: ");
+                ((VueloInternacional) lista[i]).getNombre_Escala().append(sc.nextInt());
             }
         }
     }
@@ -203,7 +203,18 @@ public class GestionVuelos {
         }
     }
 
-    public void ordernarVuelos(){}
+    public void ordernarVuelos(){
+        Vuelo aux = null;
+        for(int i = 0; i < lista.length; i++){
+            lista[i].calcularPrecioReal(lista[i]);
+        }
+
+        for (int i = 0; i < lista.length-1; i++){
+            for(int p = i+1; p < lista.length; p++){
+                Vuelo menor =
+            }
+        }
+    }
 
 
 }
