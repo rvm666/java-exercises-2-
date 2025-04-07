@@ -175,13 +175,13 @@ public class GestionVuelos {
     }
 
     public void actualizarVueloEscala(int id) {
-        scanner
+        Scanner sc = new Scanner(System.in);
                 //num escalas y paises
         for (int i = 0; i < lista.length; i++){
-            if (lista[i]!=null && lista[i] instanceof VueloInternacional && lista[i].getIdentificador() == id)
-                //for de
+            if (lista[i]!=null && lista[i] instanceof VueloInternacional && lista[i].getIdentificador() == id) {
+                //fo
 
-                ((VueloInternacional)lista[i]).getNombre_Escala().;
+            }
         }
     }
 
